@@ -12,5 +12,4 @@ router.routes('/:id?')
         }
        return res.send(mailingList)
     }))
-
     }) 
