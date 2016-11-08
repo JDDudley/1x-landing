@@ -6,19 +6,20 @@ module.exports.router = router;
 
 router.route('/:id?')
     .get(function(req, res, next){ 
-    MailingList.getAll(function(res){
-        if(res.stack){
-            return next(res)
+    MailingList.getAll(function(data){
+        if(data.stack){
+            return next(data)
         }
-       return res.send(res)
+       res.send(data)
     })
+    
     })
     .post(function(req, res, next){
-        MailingList.create(req.body, function(member){
+        MailingList.create(req.body.member, function(member){
             if(member.stack){
                 return next(member)
             }
-            return res.send(member)
+             res.send(member)
         })
     }) 
 

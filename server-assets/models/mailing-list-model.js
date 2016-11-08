@@ -11,12 +11,17 @@ let MailingList = DS.defineResource({
 })
 
 
-function create(member, cb){
-    let newMember = {
+function newMember(member){
+return{
         id: uuid.v4(),
         name: member.name,
         email: member.email
     }
+}
+
+function create(member, cb){
+ let memberObj = newMember(member)
+ MailingList.create(memberObj).then(cb).catch(cb)
 }
 
 
@@ -36,6 +41,7 @@ getMemberById = function(id, query, cb){
 }
 
 module.exports={
+    create,
     addMember,
     getAll,
     getMemberById
