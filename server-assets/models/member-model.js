@@ -15,11 +15,16 @@ function newMembership(member){
 return{
         id: member.id || uuid.v4(),
         name: member.name,
+        address: member.address,
+        city:member.city,
+        state:member.state,
+        country:member.country,
+        zip:member.zip,
+        phone:member.phone, 
         email: member.email,
-        paid: true,
+        paid: false,
         dateJoined: Date.now(), 
-        dateExpired: Date.now() + 3.154e+10, 
-    
+        dateExpired: Date.now() + 3.154e+10
     }
 }
 
