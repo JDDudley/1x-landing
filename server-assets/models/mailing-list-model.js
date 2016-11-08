@@ -15,7 +15,9 @@ function newMember(member){
 return{
         id: uuid.v4(),
         name: member.name,
-        email: member.email
+        email: member.email,
+        onList: true
+           
     }
 }
 
@@ -38,11 +40,10 @@ updateMember= function(id, member, cb){
   })
 }
 
-
 removeMember= function(memberId, cb){
   getById(memberId, function(member){
     if(memberId ==member.id){
-    member.id = null
+    member.onList = false
     }
     MailingList.update(memberId, member).then(cb).catch(cb)
 })

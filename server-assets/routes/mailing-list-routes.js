@@ -29,10 +29,9 @@ router.route('/:id?')
     })
   }) 
   .delete(function(req, res, next){
-
-   MailingList.removeMember(req.params.id, req.body.member, function(member){
+   MailingList.removeMember(req.params.id, function(member){
       if(member.stack) { return next(member) }
-      return res.send({message: "Member deleted."})
+      res.send ({message: "Member Successfully Deleted. Arm Up, Train Up, Stand Up"}) 
     })
 })
 
