@@ -8,11 +8,9 @@ let fbAdapter = new FBAdapter({
 })
 
 
-function formatQuery(query){
+formatQuery= function(query){
   query = query || ''
-  return {
-    with: query.split(',').join(' ').split(' ')
-  }
+  return { with: query.split(',').join(' ').split(' ') }
 }
 
 

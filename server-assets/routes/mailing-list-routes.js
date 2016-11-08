@@ -21,5 +21,18 @@ router.route('/:id?')
             }
              res.send(member)
         })
-    }) 
+    })
+    .put(function (req, res, next) {
+    MailingList.updateMember(req.params.id, req.body.member, function(member){
+      if(member.stack) { return next(member) }
+        res.send(member)
+    })
+  }) 
+  .delete(function(req, res, next){
+
+   MailingList.removeMember(req.params.id, req.body.member, function(member){
+      if(member.stack) { return next(member) }
+      return res.send({message: "Member deleted."})
+    })
+})
 

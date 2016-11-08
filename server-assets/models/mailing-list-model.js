@@ -24,25 +24,36 @@ function create(member, cb){
  MailingList.create(memberObj).then(cb).catch(cb)
 }
 
-
-addMember = function(member){
-    if(!name || !email){
-        return 
-    }
-    mailingList.push(member);
-}
-
 getAll= function(cb){
     MailingList.findAll({}).then(cb).catch(cb)
 }
 
-getMemberById = function(id, query, cb){
-    MailingList.find(id, formatQuery(query)).then(cb).catch(cb)
+getById = function(id, cb){
+    MailingList.find(id).then(cb).catch(cb)
 }
+
+updateMember= function(id, member, cb){
+  getById(id, function(oldMember){
+    MailingList.update(id, newMember(member)).then(cb).catch(cb)
+  })
+}
+
+
+removeMember= function(memberId, cb){
+  getById(memberId, function(member){
+    if(memberId ==member.id){
+    member.id = null
+    }
+    MailingList.update(memberId, member).then(cb).catch(cb)
+})
+}
+
+
 
 module.exports={
     create,
-    addMember,
     getAll,
-    getMemberById
+    getById,
+    updateMember,
+    removeMember
 }
