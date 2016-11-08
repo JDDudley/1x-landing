@@ -52,6 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .section-armory {
     background-color: rgba(0,100,0,0.25);
+    text-align: center;
 }
 .supplier-list {
     background-color: white;
