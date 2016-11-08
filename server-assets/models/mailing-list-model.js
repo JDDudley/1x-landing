@@ -5,33 +5,39 @@ let dataAdapter = require('./data-adapter'),
   DS = dataAdapter.DS,
   formatQuery = dataAdapter.formatQuery;
 
-let mailingList = [];
 
-let Member = DS.defineResource({
-  id: uuid.v4(),
-  name: this.name,
-  email: this.email,
-  endpoint: 'mailing-list',
+let MailingList = DS.defineResource({
+    name: 'mailinglist',
+    endpoint: 'mailinglist'
 })
 
 
-addMember((member)=>{
+function create(member, cb){
+    let newMember = {
+        id: uuid.v4(),
+        name: member.name,
+        email: member.email
+    }
+}
+
+
+addMember = function(member){
     if(!name || !email){
         return 
     }
     mailingList.push(member);
-})
+}
 
-getAll((query, cb)=>{
+getAll= function(query, cb){
     mailingList.findAll({}, formatQuery(query)).then(cb).catch(cb)
-})
+}
 
-getMemberById((id, query, cb)=>{
+getMemberById = function(id, query, cb){
     mailingList.find(id, formatQuery(query)).then(cb).catch(cb)
-})
+}
 
 module.exports={
     addMember,
-    getMembers,
+    getAll,
     getMemberById
 }

@@ -20,9 +20,10 @@
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "express": "^4.14.0",
-    "firebase": "^3.5.3",
+    "firebase": "^2.4.2",
     "js-data": "^2.9.0",
     "js-data-firebase": "^2.1.1",
-    "node-uuid": "^1.4.7"
+    "node-uuid": "^1.4.7",
+    "nodemon": "^1.11.0"
   }
 }
