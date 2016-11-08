@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 .section-membership {
-    background-color: rgba(0,0,0,0.25);
+    background-color: rgba(0,100,0,0.25);
 }
 .signup-header {
     color: tan !important;
@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px;
 }
 .section-benefits {
-    background-color: rgba(0,100,0,0.25);
+    background-color: rgba(0,0,0,0.25);
     font-size: 2rem;
 }
 .benefit-list {
