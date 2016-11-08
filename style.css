@@ -30,6 +30,12 @@ h1, h2, h3, h4, h5, h6 {
     color: tan !important;
     text-shadow: 2px 2px 2px black;
 }
+.join-btn {
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 2em;
+    font-family: 'Oswald', sans-serif;
+}
 .home-container {
     background-image: url('backgrounds/cracked.jpg');
     background-attachment: fixed;
@@ -50,16 +56,8 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 2em;
     text-align: center;
 }
-.section-armory {
-    background-color: rgba(0,100,0,0.25);
-    text-align: center;
-}
-.supplier-list {
-    background-color: white;
-    text-align: center;
-}
 .section-membership {
-    background-color: rgba(0,100,0,0.25);
+    background-color: rgba(0,0,0,0.25);
 }
 .signup-header {
     color: tan !important;
@@ -72,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px;
 }
 .section-benefits {
-    background-color: rgba(0,0,0,0.25);
+    background-color: rgba(0,60,0,0.25);
     font-size: 2rem;
 }
 .benefit-list {
@@ -90,7 +88,17 @@ h1, h2, h3, h4, h5, h6 {
     color: red;
     padding-right: 8px;
 }
+.section-armory {
+    background-color: rgba(0,60,0,0.25);
+    text-align: center;
+}
+.supplier-list {
+    background-color: white;
+    text-align: center;
+}
 .footer {
     background-color: black;
     color: #e8e8e8;
+    text-align: center;
+    padding: 12px;
 }
