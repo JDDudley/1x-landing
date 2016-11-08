@@ -1,7 +1,6 @@
 
-let dataAdapter = require('./data-adapter'),
+let dataAdapter = require('../models/data-adapter'),
   uuid = dataAdapter.uuid,
-  schemator = dataAdapter.schemator,
   DS = dataAdapter.DS,
   formatQuery = dataAdapter.formatQuery;
 
@@ -28,12 +27,12 @@ addMember = function(member){
     mailingList.push(member);
 }
 
-getAll= function(query, cb){
-    mailingList.findAll({}, formatQuery(query)).then(cb).catch(cb)
+getAll= function(cb){
+    MailingList.findAll({}).then(cb).catch(cb)
 }
 
 getMemberById = function(id, query, cb){
-    mailingList.find(id, formatQuery(query)).then(cb).catch(cb)
+    MailingList.find(id, formatQuery(query)).then(cb).catch(cb)
 }
 
 module.exports={

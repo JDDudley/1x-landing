@@ -5,13 +5,13 @@ module.exports.mountPath = '/mailing-list'
 module.exports.router = router;
 
 router.route('/:id?')
-    .get((req, res, next)=>{ 
-    MailingList.getAll(req, ((res)=>{
-        if(mailingList.stack){
-            return next(mailingList)
+    .get(function(req, res, next){ 
+    MailingList.getAll(function(res){
+        if(res.stack){
+            return next(res)
         }
-       return res.send(mailingList)
-    }))
+       return res.send(res)
+    })
     })
     .post(function(req, res, next){
         MailingList.create(req.body, function(member){
