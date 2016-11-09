@@ -1,31 +1,42 @@
-   <form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <form class="form-horizontal">
         <div class="form-group">
-            <div>
-            <label class="col-sm-3">First Name</label>
-            </div>
+            <label class="col-sm-3 control-label">First Name</label>
             <div class="col-sm-9">
                 <input type="text" class="form-control" id="exampleInputName2" placeholder="Joe">
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3">Last Name</label>
-            <div class="col-sm-9" <input type="text" class="form-control" id="exampleInputName2" placeholder="Smith">
+            <label class="col-sm-3 control-label">Last Name</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="exampleInputName2" placeholder="Smith">
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 exampleInputEmail1">Email address</label>
+            <label class="col-sm-3 control-label exampleInputEmail1">Email address</label>
             <div class="col-sm-9">
                 <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 exampleInputPassword1">Password</label>
+            <label class="col-sm-3 control-label exampleInputPassword1">Password</label>
             <div class="col-sm-9">
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 exampleInputPassword1">Re-Enter Password</label>
+            <label class="col-sm-3 control-label exampleInputPassword1">Re-Enter Password</label>
             <div class="col-sm-9">
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
@@ -34,31 +45,29 @@
         <div class="form-group">
             <label class="col-sm-3 control-label">Address Line 1</label>
             <div class="col-sm-9 controls">
-                <input id="address-line1" name="address-line1" type="text" placeholder="address line 1" class="input-xlarge">
-                <p class="help-block">Street address, P.O. box, company name, c/o</p>
+                <input type="text" class="form-control" id="address-line1" name="address-line1" placeholder="Address line 1">
             </div>
         </div>
         <!-- address-line2 input-->
         <div class="form-group">
             <label class="col-sm-3 control-label">Address Line 2</label>
             <div class="col-sm-9 controls">
-                <input id="address-line2" name="address-line2" type="text" placeholder="address line 2" class="input-xlarge">
-                <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
+                <input type="text" class="form-control" id="address-line2" name="address-line1" placeholder="Address line 2">
             </div>
         </div>
         <!-- city input-->
         <div class="form-group">
             <label class="col-sm-3 control-label">City / Town</label>
             <div class="col-sm-9 controls">
-                <input id="city" name="city" type="text" placeholder="city" class="input-xlarge">
+                <input type="text" class="form-control" id="city" name="city" placeholder="City">
                 <p class="help-block"></p>
             </div>
         </div>
         <!-- region input-->
         <div class="form-group">
             <label class="col-sm-3 control-label">State / Province / Region</label>
-            <div class="controls">
-                <select id="state" name="state" class="input-xlarge">
+            <div class="col-sm-3 controls">
+                <select id="state" name="state" class="form-control">
                         <option value="" selected="selected">(please select a state)</option>
                         <option value="N/A">Other</option>
                         <option value="AL">Alabama</option>
@@ -118,17 +127,16 @@
         <!-- postal-code input-->
         <div class="form-group">
             <label class="col-sm-3 control-label">Zip / Postal Code</label>
-            <div class="controls">
-                <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code" class="input-xlarge">
-                <p class="help-block"></p>
+            <div class="col-sm-9 controls">
+                <input type="text" class="form-control" id="postal-code" name="Postal-code" placeholder="Zip or Postal Code">
             </div>
         </div>
         <!-- country select -->
         <div class="form-group">
             <label class="col-sm-3 control-label">Country</label>
-            <div class="controls">
-                <select id="country" name="country" class="input-xlarge">
-                            <option value="" selected="selected">(please select a country)</option>
+            <div class="col-sm-3 controls">
+                <select id="country" name="country" class="form-control">
+                            <option value="US" selected="selected">United States</option>
                             <option value="AF">Afghanistan</option>
                             <option value="AL">Albania</option>
                             <option value="DZ">Algeria</option>
@@ -353,7 +361,7 @@
                             <option value="UA">Ukraine</option>
                             <option value="AE">United Arab Emirates</option>
                             <option value="GB">United Kingdom</option>
-                            <option value="US">United States</option>
+                            <!--<option value="US">United States</option>-->
                             <option value="UM">United States Minor Outlying Islands</option>
                             <option value="UY">Uruguay</option>
                             <option value="UZ">Uzbekistan</option>
@@ -404,10 +412,10 @@
                 <option value="10">Oct (10)</option>
                 <option value="11">Nov (11)</option>
                 <option value="12">Dec (12)</option>
-              </select>
+            </select>
                     </div>
                     <div class="col-xs-3">
-                        <select class="form-control" name="expiry-year">
+            <select class="form-control" name="expiry-year">
                 <option value="13">2013</option>
                 <option value="14">2014</option>
                 <option value="15">2015</option>
@@ -419,7 +427,7 @@
                 <option value="21">2021</option>
                 <option value="22">2022</option>
                 <option value="23">2023</option>
-              </select>
+            </select>
                     </div>
                 </div>
             </div>
@@ -430,6 +438,13 @@
                 <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code">
             </div>
         </div>
-
-        <button type="submit" class="btn btn-default">Submit</button>
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-9">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </form>
+
+</body>
+
+</html>
