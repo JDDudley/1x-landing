@@ -16,9 +16,7 @@ return{
         id: member.id || uuid.v4(),
         name: member.name,
         email: member.email,
-        onList: true,
-        isMember: false 
-           
+        onList: true           
     }
 }
 
