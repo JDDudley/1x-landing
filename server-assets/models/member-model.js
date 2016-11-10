@@ -27,7 +27,8 @@ return{
         dateJoined: Date.now(), 
         dateExpired: Date.now() + 3.154e+10,
         isMember: true,  
-        isAdmin: false
+        isAdmin: false,
+        onMailingList: true,
     }
 }
 
@@ -59,6 +60,13 @@ removeMember= function(memberId, cb){
     Membership.update(memberId, member).then(cb).catch(cb)
 })
 }
+
+//FUNCTION TO CHANGE PAID BOOLEAN
+// paidMember = ((stripeToken, member)=>{
+//    if(stripeToken){
+//        member.paid=false;
+//    }
+// })
 
 module.exports={
     create,
