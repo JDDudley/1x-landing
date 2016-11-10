@@ -29,6 +29,7 @@ return{
         isMember: true,  
         isAdmin: false,
         onMailingList: true,
+        paymentInfo:[]
     }
 }
 
@@ -61,12 +62,11 @@ removeMember= function(memberId, cb){
 })
 }
 
-//FUNCTION TO CHANGE PAID BOOLEAN
-// paidMember = ((stripeToken, member)=>{
-//    if(stripeToken){
-//        member.paid=false;
-//    }
-// })
+paidMember = (member)=>{
+   if(member.paymentInfo!=[]){
+       member.paid=true;
+   }
+}
 
 module.exports={
     create,

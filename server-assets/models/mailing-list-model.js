@@ -14,7 +14,6 @@ let MailingList = DS.defineResource({
 function newMember(member){
 return{
         id: member.id || uuid.v4(),
-        name: member.name,
         email: member.email,
         onMailingList: true           
     }
