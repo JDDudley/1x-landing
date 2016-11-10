@@ -63,7 +63,7 @@ removeMember= function(memberId, cb){
 }
 
 paidMember = (member)=>{
-   if(member.paymentInfo!=[]){
+   if(member.paymentInfo!==[]){
        member.paid=true;
    }
 }
