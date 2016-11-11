@@ -1,4 +1,4 @@
-let stripe = require("stripe")("sk_test_tlI06RUdE1tVOzucTg99mHne");
+let stripe = require("stripe")("sk_live_vtQViHmHf6PpXaBRHEXjrty8");
 
 function create(body) {
     console.log('creating membership charge...');
