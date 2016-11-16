@@ -14,6 +14,8 @@ id: product.id || uuid.v4(),
         description: product.description,
         images:[],
         msrp: product.msrp,
+        specs: product.specs || '',
+        reviews: product.reviews || ''
         memberPrice:product.memberPrice,
         nonMemberPrice:product.nonMemberPrice,
         inStock: true,
