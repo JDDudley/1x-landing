@@ -9,13 +9,14 @@ newProduct takes one parameter, which is the product you are adding to the store
 *** products must be wrapped in a "product" property.
 format -- 
 /////////////////////////////////////
-id: product.id || uuid.v4(),
+        id: product.id || uuid.v4(),
+        category: product.category,
         name: product.name,
         description: product.description,
+        specs: product.specs || [],
         images:[],
+        reviews: product.reviews || '',
         msrp: product.msrp,
-        specs: product.specs || '',
-        reviews: product.reviews || ''
         memberPrice:product.memberPrice,
         nonMemberPrice:product.nonMemberPrice,
         inStock: true,

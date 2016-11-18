@@ -11,9 +11,10 @@ let dataAdapter = require('../models/data-adapter'),
 function newProduct(product){
     return{
         id: product.id || uuid.v4(),
+        category: product.category,
         name: product.name,
         description: product.description,
-        specs: product.specs || '',
+        specs: product.specs || [],
         images:[],
         reviews: product.reviews || '',
         msrp: product.msrp,
@@ -53,7 +54,6 @@ removeProduct =(productId, cb)=>{
         Store.update(productId, product).then(cb).catch(cb)
     })
 }
-
 
 module.exports={
     addToStore,
