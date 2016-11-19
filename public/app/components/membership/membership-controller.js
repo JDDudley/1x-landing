@@ -2,7 +2,7 @@
 
   angular.module('1x')
         .component('membership', {
-            templateUrl: 'app/components/membership.html',
+            templateUrl: 'app/components/membership/membership.html',
             controller: MembershipController
                     })
     

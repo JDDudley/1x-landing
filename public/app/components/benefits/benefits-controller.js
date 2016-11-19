@@ -2,7 +2,7 @@
 
   angular.module('1x')
         .component('benefits', {
-            templateUrl: 'app/components/benefits.html',
+            templateUrl: 'app/components/benefits/benefits.html',
             controller: BenefitsController
                     })
     

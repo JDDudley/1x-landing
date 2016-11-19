@@ -2,7 +2,7 @@
 
   angular.module('1x')
         .component('armory', {
-            templateUrl: 'app/components/armory.html',
+            templateUrl: 'app/components/armory/armory.html',
             controller: ArmoryController
                     })
     

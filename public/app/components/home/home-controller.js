@@ -2,7 +2,7 @@
 
   angular.module('1x')
         .component('home', {
-            templateUrl: 'app/components/home.html',
+            templateUrl: 'app/components/home/home.html',
             controller: HomeController
                     })
     

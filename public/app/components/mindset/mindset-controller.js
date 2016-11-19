@@ -2,7 +2,7 @@
 
   angular.module('1x')
         .component('mindset', {
-            templateUrl: 'app/components/mindset.html',
+            templateUrl: 'app/components/mindset/mindset.html',
             controller: MindsetController
                     })
     

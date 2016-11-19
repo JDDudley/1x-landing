@@ -2,7 +2,7 @@
     angular.module('1x')
 
         .component('cart', {
-            templateUrl: 'app/components/cart.html',
+            templateUrl: 'app/components/cart/cart.html',
             controller: CartController
         })
 
