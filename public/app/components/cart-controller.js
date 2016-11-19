@@ -1,9 +1,9 @@
 ; (function () {
     angular.module('1x')
 
-        .component('cartComponent', {
-            controller: CartController,
-            templateUrl: 'cart.html'
+        .component('cart', {
+            templateUrl: 'app/components/cart.html',
+            controller: CartController
         })
 
     function CartController() {
@@ -12,9 +12,10 @@
 
         this.cart = []
 
-        this.store = {
-            products: StoreData
-        }
+        // this.store = {
+        //     products: Service
+        //     Need to know the Data Store, check the cart branch
+        // }
 
         this.name = 'My Cart'
 
