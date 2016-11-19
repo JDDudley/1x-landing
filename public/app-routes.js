@@ -32,6 +32,11 @@ angular.module('1x')
                 url: '/armory',
                 template: '<armory></armory>', 
             })
+            .state({
+                name: 'cart',
+                url: '/cart',
+                template: '<cart></cart>', 
+            })
 
         })
         
