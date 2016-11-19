@@ -36,3 +36,17 @@
         </tfoot>
     </table>
 </div>
+<div class="row">
+    <div ng-repeat="product in $ctrl.store.products" class="col-sm-4">
+        <div class="shopping-product">
+            <p class="product-price">MSRP: {{product.msrp | currency}}</p>
+            <p class="product-price">Members: {{product.memberPrice | currency}}</p>
+            <p class="product-price">Non-Members {{product.nonMemberPrice | currency}}</p>
+            <p class="product-name">
+                {{product.name}}</p>
+            <img ng-src="{{product.img}}">
+            
+            <button class="btn btn-xs btn-primary" ng-click="$ctrl.addProductToCart(product)">Add</button>
+        </div>
+    </div>
+</div>

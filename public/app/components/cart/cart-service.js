@@ -1,11 +1,12 @@
 var StoreData = angular.module('1x');
-StoreData.controller('myCtrl', function ($http) {
-    $http({
-        method: 'GET',
-        url: 'http://localhost:8080/api/store'
-    }).then(function successCallback(response) {
-        return 200
-    }, function errorCallback(response) {
-        return 404
-    })
+StoreData.service('CartService', function($http) {
+
+    let sd = this;
+    sd.getAll = (cb) => {
+        $http({
+            method: 'GET',
+            url: 'http://localhost:8080/api/store'
+        }).then(cb).catch(cb)
+    }
+
 })
