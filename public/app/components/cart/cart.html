@@ -39,7 +39,11 @@
 
 <div class="container-fluid">
     <div class="row">
-        <input type="text" ng-model="$ctrl.query" style="color:black">
+        <select ng-model="$ctrl.filterBy" style="color:black">
+            <option value="name" ng-selected>Name</option>
+            <option value="id">ID</option>
+        </select>
+        <input type="text" ng-model="$ctrl.query[$ctrl.filterBy]" style="color:black">
         <button class="btn-success" type="button">Search</button>
     </div>
     <div class="row">
