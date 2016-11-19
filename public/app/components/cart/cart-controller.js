@@ -9,18 +9,20 @@
     CartController.$inject = ['CartService']
 
     function CartController(CartService) {
-        debugger
+        // debugger
 
         this.cartStatus = 'Working'
 
         this.cart = []
 
-        this.store = {
-            products: CartService.getAll((products) => {
-                console.log(products.data)
-                return products.data
-            })
-        }
+        this.products = []
+
+        this.store = CartService.getAll((products) => {
+            console.log(products.data[0].msrp)
+            this.products = products.data
+            return this.products
+        })
+
 
         this.name = 'My Cart'
 
