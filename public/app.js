@@ -1,12 +1,10 @@
 (()=>{
 
 
-angular.module('drone-tracker', [
+var app = angular.module('1x', [
     'ui.router',
     'ngSanitize'
-    ])
-
-
+    ]); 
 
 
 })();

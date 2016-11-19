@@ -1,6 +1,6 @@
 (()=>{
 
-let app = angular.module('drone-tracker')
+angular.module('1x')
     .config(
         function($stateProvider, $urlRouterProvider) {
         
@@ -12,8 +12,26 @@ let app = angular.module('drone-tracker')
                 url: '/home',
                 template: '<home></home>', 
             })
-        
-  
+            .state({
+                name: 'mindset',
+                url: '/mindset',
+                template: '<mindset></mindset>', 
+            })
+            .state({
+                name: 'benefits',
+                url: '/benefits',
+                template: '<benefits></benefits>', 
+            })
+            .state({
+                name: 'membership',
+                url: '/membership',
+                template: '<membership></membership>', 
+            })
+            .state({
+                name: 'armory',
+                url: '/armory',
+                template: '<armory></armory>', 
+            })
 
         })
         
