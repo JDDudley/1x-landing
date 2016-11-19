@@ -32,10 +32,15 @@ angular.module('1x')
                 url: '/armory',
                 template: '<armory></armory>', 
             })
-            .state({
+            .state({   //THIS WILL BECOME AMORY
                 name: 'cart',
                 url: '/cart',
                 template: '<cart></cart>', 
+            })
+            .state({
+                name: 'admin',
+                url: '/admin',
+                template: '<admin></admin>', 
             })
 
         })
