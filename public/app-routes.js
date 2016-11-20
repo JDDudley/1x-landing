@@ -1,8 +1,7 @@
 (() => {
-
     angular.module('1x')
         .config(
-        function ($stateProvider, $urlRouterProvider) {
+        function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/home')
             $stateProvider
                 .state({
@@ -39,6 +38,11 @@
                     name: 'cart',
                     url: '/cart',
                     template: '<cart></cart>'
+                })
+                .state({
+                    name: 'admin',
+                    url: '/admin',
+                    template: '<admin></admin>'
                 })
         })
 })(); 
