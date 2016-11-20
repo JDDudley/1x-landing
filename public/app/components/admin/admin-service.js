@@ -5,7 +5,7 @@ StoreData.service('AdminService', function ($http) {
     let as = this;
 
     as.addProduct = (product) => {
-        debugger 
+        debugger
         var productObj = {
             "product": {
                 "category": product.category,

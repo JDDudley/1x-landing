@@ -12,12 +12,10 @@
 
         ac.moreImage = () => {
             var newImg = angular.element(document.querySelector('#images'));
-            newImg.append(`<input ng-model="$ctrl.newItem.image" type="text" placeholder="Image Url">`);
+            newImg.append(`<input id="img" ng-model="$ctrl.newItem.image" type="text" placeholder="Image Url">`);
         }
 
-        ac.addItem = (product) => {
-            as.addProduct(product)
-        }
+        ac.addItem = (product) => { as.addProduct(product) }
     }
 
 
