@@ -1,0 +1,83 @@
+<nav class="main-nav" ng-click="$ctrl.show = !$ctrl.show">
+	<ul ng-class="{'is-visible': $ctrl.show}">
+		<li><a class="x-signin" ng-click="$ctrl.activeView = 'login'" ng-if="!$ctrl.member.email">Sign in</a></li>
+    <li ng-if="$ctrl.member.email">
+			<p style="color: #fff;" class="">Hi, {{$ctrl.member.displayName.split(' ')[0]}}</p>
+		</li>
+		<!--<li ng-if="$ctrl.member.email">
+			<img class="profile-picture" ng-src="{{$ctrl.member.photoURL}}" alt="profile" ng-if="$ctrl.member.photoURL">
+		</li>-->
+		<li ng-if="$ctrl.member.email">
+			<a class="x-signin" ng-click="$ctrl.logout()">Logout</a>
+		</li>
+	</ul>
+</nav>
+<div class="x-user-modal" ng-class="{'is-visible': $ctrl.activeView.length > 0}">
+	<div class="x-user-modal-container">
+		<ul class="x-switcher">
+			<li><a ng-class="{'selected': $ctrl.activeView == 'login'}" ng-click="$ctrl.activeView = 'login'">Sign in</a></li>
+			<li><a ng-class="{'selected': $ctrl.activeView == 'register'}" ng-click="$ctrl.activeView = 'register'">New account</a></li>
+			<li><a ng-click="$ctrl.activeView = ''">X</a></li>
+		</ul>
+
+		<div class="x-login" ng-class="{'is-selected': $ctrl.activeView.indexOf('i') > -1}">
+
+			<div class="social-login-btns">
+				<h5>Login with</h5>
+				<button class="loginBtn loginBtn--facebook" ng-click="$ctrl.login('facebook')"> Facebook</button>
+				<button class="loginBtn loginBtn--google" ng-click="$ctrl.login('google')"> Google</button>
+			</div>
+
+			<form class="x-form" ng-submit="$ctrl.activeView == 'register' ? $ctrl.register($ctrl.auth) : $ctrl.login('email', $ctrl.auth)">
+				<h5>or...</h5>
+				<p class="fieldset" ng-if="$ctrl.activeView == 'register'">
+					<label class="image-replace x-username" for="signup-username">Name</label>
+					<input class="full-width has-padding has-border" ng-model="$ctrl.auth.displayname" type="text" placeholder="Username">
+				</p>
+
+				<p class="fieldset">
+					<label class="image-replace x-email" for="login-email">E-mail</label>
+					<input class="full-width has-padding has-border" ng-model="$ctrl.auth.email" type="email" placeholder="E-mail" required>
+				</p>
+				<p class="fieldset">
+					<label class="image-replace x-password" for="login-password">Password</label>
+					<input class="full-width has-padding has-border" ng-model="$ctrl.auth.password" type="{{$ctrl.showPassword ? 'text': 'password'}}"
+						placeholder="Password">
+					<a class="hide-password" ng-click="$ctrl.showPassword = !$ctrl.showPassword">{{$ctrl.showPassword ? 'hide': 'show'}}</a>
+				</p>
+
+				<p class="fieldset">
+					<input type="checkbox" id="remember-me" checked>
+					<label for="remember-me">Remember me</label>
+				</p>
+
+				<p class="fieldset">
+					<input class="full-width" type="submit" value="Login">
+				</p>
+			</form>
+
+			<p class="x-form-bottom-message"><a ng-click="$ctrl.activeView = 'forgot'">Forgot your password?</a> - <a>view Terms</a></p>
+			<a ng-click="$ctrl.activeView = ''; $ctrl.show = false;" class="x-close-form">Close</a>
+		</div>
+		<!-- x-login -->
+
+		<div class="x-reset-password" ng-class="{'is-selected': $ctrl.activeView == 'forgot'}">
+			<!-- reset password form -->
+			<p class="x-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+			<form class="x-form" ng-submit="$ctrl.forgot($ctrl.auth)">
+				<p class="fieldset">
+					<label class="image-replace x-email" for="reset-email">E-mail</label>
+					<input class="full-width has-padding has-border" ng-model="$ctrl.auth.email" type="email" placeholder="E-mail">
+				</p>
+
+				<p class="fieldset">
+					<input class="full-width has-padding" type="submit" value="Reset password">
+					<div class="alert alert-danger" ng-if="$ctrl.error">{{$ctrl.error}}</div>
+				</p>
+			</form>
+
+			<p class="x-form-bottom-message"><a ng-click="$ctrl.activeView = 'login'">Back to sign in</a></p>
+		</div>
+	</div>
+</div>

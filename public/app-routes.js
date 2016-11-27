@@ -44,5 +44,10 @@
                     url: '/admin',
                     template: '<admin></admin>'
                 })
+                .state({
+                    name: 'login',
+                    url: '/login',
+                    template: '<auth></auth>'
+                })
         })
 })(); 
