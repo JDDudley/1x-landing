@@ -1,5 +1,5 @@
-
 let dataAdapter = require('../models/data-adapter'),
+    Store = require('./store-model.js'),
     uuid = dataAdapter.uuid,
     DS = dataAdapter.DS,
     formatQuery = dataAdapter.formatQuery;
@@ -10,8 +10,8 @@ let Membership = DS.defineResource({
     endpoint: 'membership',
     relations: {
         hasMany: {
-            product: { //only will be in products bought 
-                localField: 'store',   //membership.products => array of products bought
+            store: { //only will be in products bought 
+                localField: 'products',   //membership.products => array of products bought
                 foreignKey: 'memberId'  // this links member.id to memberId on a product this member buys
             },
             event:{
@@ -41,7 +41,7 @@ function newMembership(member) {
         isAdmin: false,
         onMailingList: true,
         paymentInfo: member.paymentInfo,
-        shoppingCart: member.shoppingCart || {}
+        shoppingCart: member.shoppingCart || []
     }
 }
 
