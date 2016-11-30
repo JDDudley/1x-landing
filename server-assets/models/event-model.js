@@ -21,6 +21,7 @@ function newEvent(event){
         id: event.id || uuid.v4(),
         name: event.name,
         date: event.date,
+        time: event.time,
         minSeat: event.minSeat,
         maxSeat: event.maxSeat,
         price: event.price,
