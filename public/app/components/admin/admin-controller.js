@@ -16,7 +16,14 @@
         }
 
         ac.addItem = (product) => { as.addProduct(product) }
+
+        ac.addEvent = (event) => {  //as.addEvent(event)  
+        }
+
     }
+
+
+
 
 
 
