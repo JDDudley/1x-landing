@@ -3,7 +3,9 @@
 
 var app = angular.module('1x', [
     'ui.router',
-    'ngSanitize'
+    'ngSanitize',
+    'flow',
+    'lr.upload'
     ]); 
 
 
